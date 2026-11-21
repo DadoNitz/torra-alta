@@ -1,149 +1,576 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ddd6c6">
-  <meta name="description" content="Torra Alta: cafés brasileiros, torrados no tempo da Serra Gaúcha. Conheça as origens, a torra e os pequenos rituais de uma marca fictícia.">
-  <meta property="og:title" content="Torra Alta — Café no tempo da serra">
-  <meta property="og:description" content="Da origem à sua pausa. Uma torrefação fictícia de cafés especiais na Serra Gaúcha.">
-  <meta property="og:type" content="website">
-  <title>Torra Alta — Café no tempo da serra</title>
-  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-  <link rel="preload" href="./assets/fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./assets/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./script.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <header class="site-header">
-    <a class="wordmark" href="#inicio" aria-label="Torra Alta, início">
-      <svg viewBox="0 0 48 36" width="44" height="33" aria-hidden="true"><path d="M0 34 17 5l8 14L34 0l14 34H0Z" fill="currentColor"/><path d="m11 34 9-16 8 16H11Z" fill="#ddd6c6"/></svg>
-      <span>Torra Alta</span>
-    </a>
-    <nav aria-label="Navegação principal">
-      <a href="#origem">Origem</a>
-      <a href="#torra">Torra</a>
-      <a href="#cafes">Cafés</a>
-      <a href="#visite">Visite</a>
-      <a href="#assinatura">Assinatura</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ddd6c6" />
+    <meta
+      name="description"
+      content="Torra Alta: cafés brasileiros, torrados no tempo da Serra Gaúcha. Conheça as origens, a torra e os pequenos rituais de uma marca fictícia."
+    />
+    <meta property="og:title" content="Torra Alta — Café no tempo da serra" />
+    <meta
+      property="og:description"
+      content="Da origem à sua pausa. Uma torrefação fictícia de cafés especiais na Serra Gaúcha."
+    />
+    <meta property="og:type" content="website" />
+    <title>Torra Alta — Café no tempo da serra</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link
+      rel="preload"
+      href="./assets/fonts/bebas-neue.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/eb-garamond.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <a class="wordmark" href="#inicio" aria-label="Torra Alta, início">
+        <svg viewBox="0 0 48 36" width="44" height="33" aria-hidden="true">
+          <path d="M0 34 17 5l8 14L34 0l14 34H0Z" fill="currentColor" />
+          <path d="m11 34 9-16 8 16H11Z" fill="#ddd6c6" />
+        </svg>
+        <span>Torra Alta</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#origem">Origem</a>
+        <a href="#torra">Torra</a>
+        <a href="#cafes">Cafés</a>
+        <a href="#visite">Visite</a>
+        <a href="#assinatura">Assinatura</a>
+      </nav>
+    </header>
 
-  <main id="conteudo">
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <picture><source media="(max-width: 600px)" srcset="./assets/hero-mobile.webp"><img class="hero-photo" src="./assets/campos-do-parque-estadual-do-tainhas.webp" width="1600" height="1067" fetchpriority="high" alt="Horizonte aberto dos Campos de Cima da Serra, no Parque Estadual do Tainhas"></picture>
-      <div class="hero-content frame">
-        <h1 id="hero-title">Café no tempo<br>da serra</h1>
-        <div class="hero-support">
-          <p>Cafés brasileiros, torrados em pequenos lotes na Serra Gaúcha. Para quem faz da xícara uma pausa.</p>
-          <a class="button" href="#cafes">Conheça os cafés <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="origin section-space frame" id="origem" aria-labelledby="origin-title">
-      <div class="section-intro">
-        <h2 id="origin-title" data-reveal>A origem<br>vem primeiro</h2>
-        <p class="lead" data-reveal>A serra é a nossa casa de torra. O café chega de outras montanhas brasileiras, trazendo o sabor de onde nasceu.</p>
-      </div>
-      <div class="origin-mosaic">
-        <figure class="origin-photo" data-reveal>
-          <img src="./assets/pedra-dos-tres-pontos-es-01.webp" srcset="./assets/origem-mobile.webp 640w, ./assets/pedra-dos-tres-pontos-es-01.webp 1280w" sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 900px) 55vw, 65vw" width="1280" height="853" loading="lazy" decoding="async" alt="Cerejas de café maduras diante da Pedra dos Três Pontos, no Espírito Santo">
-          <figcaption>Café crescendo aos pés da Pedra dos Três Pontos, no Espírito Santo.</figcaption>
-        </figure>
-        <div class="origin-facts" data-reveal>
-          <div class="origin-note">
-            <p>Da montanha<br>para a montanha.</p>
-            <svg viewBox="0 0 300 140" aria-hidden="true"><path d="m0 140 70-100 43 57 53-85 64 87 28-34 42 75H0Z" fill="currentColor"/></svg>
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <picture
+          ><source
+            media="(max-width: 600px)"
+            srcset="./assets/hero-mobile.webp" />
+          <img
+            class="hero-photo"
+            src="./assets/campos-do-parque-estadual-do-tainhas.webp"
+            width="1600"
+            height="1067"
+            fetchpriority="high"
+            alt="Horizonte aberto dos Campos de Cima da Serra, no Parque Estadual do Tainhas"
+        /></picture>
+        <div class="hero-content frame">
+          <h1 id="hero-title">Café no tempo<br />da serra</h1>
+          <div class="hero-support">
+            <p>
+              Cafés brasileiros, torrados em pequenos lotes na Serra Gaúcha.
+              Para quem faz da xícara uma pausa.
+            </p>
+            <a class="button" href="#cafes"
+              >Conheça os cafés <span aria-hidden="true">↗</span></a
+            >
           </div>
-          <dl>
-            <div><dt>Origem dos grãos</dt><dd>Minas Gerais e Espírito Santo</dd></div>
-            <div><dt>Espécie</dt><dd>100% arábica</dd></div>
-            <div><dt>Casa de torra</dt><dd>Campos de Cima da Serra, RS</dd></div>
-            <div><dt>Escolha dos lotes</dt><dd>Doçura, clareza e identidade</dd></div>
+        </div>
+      </section>
+
+      <section
+        class="origin section-space frame"
+        id="origem"
+        aria-labelledby="origin-title"
+      >
+        <div class="section-intro">
+          <h2 id="origin-title" data-reveal>A origem<br />vem primeiro</h2>
+          <p class="lead" data-reveal>
+            A serra é a nossa casa de torra. O café chega de outras montanhas
+            brasileiras, trazendo o sabor de onde nasceu.
+          </p>
+        </div>
+        <div class="origin-mosaic">
+          <figure class="origin-photo" data-reveal>
+            <img
+              src="./assets/pedra-dos-tres-pontos-es-01.webp"
+              srcset="
+                ./assets/origem-mobile.webp                640w,
+                ./assets/pedra-dos-tres-pontos-es-01.webp 1280w
+              "
+              sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 900px) 55vw, 65vw"
+              width="1280"
+              height="853"
+              loading="lazy"
+              decoding="async"
+              alt="Cerejas de café maduras diante da Pedra dos Três Pontos, no Espírito Santo"
+            />
+            <figcaption>
+              Café crescendo aos pés da Pedra dos Três Pontos, no Espírito
+              Santo.
+            </figcaption>
+          </figure>
+          <div class="origin-facts" data-reveal>
+            <div class="origin-note">
+              <p>Da montanha<br />para a montanha.</p>
+              <svg viewBox="0 0 300 140" aria-hidden="true">
+                <path
+                  d="m0 140 70-100 43 57 53-85 64 87 28-34 42 75H0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <dl>
+              <div>
+                <dt>Origem dos grãos</dt>
+                <dd>Minas Gerais e Espírito Santo</dd>
+              </div>
+              <div>
+                <dt>Espécie</dt>
+                <dd>100% arábica</dd>
+              </div>
+              <div>
+                <dt>Casa de torra</dt>
+                <dd>Campos de Cima da Serra, RS</dd>
+              </div>
+              <div>
+                <dt>Escolha dos lotes</dt>
+                <dd>Doçura, clareza e identidade</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <p class="origin-close" data-reveal>
+          A gente escolhe a origem antes de acender o torrador. Depois, encontra
+          o ponto em que cada café pode ser ele mesmo.
+        </p>
+      </section>
+
+      <section
+        class="roast scene"
+        id="torra"
+        data-scene="roast"
+        aria-labelledby="roast-title"
+      >
+        <div class="scene-stage">
+          <h2 id="roast-title">O tempo da torra</h2>
+          <article class="roast-beat">
+            <img
+              src="./assets/roasted-coffee-beans-on-the-surface-01.webp"
+              width="1280"
+              height="853"
+              loading="lazy"
+              alt="Grãos torrados vistos de perto, com texturas e tons diferentes"
+            />
+            <div class="roast-copy">
+              <h3>Aquecer</h3>
+              <p>
+                O grão perde umidade e começa a mudar. O calor entra aos poucos,
+                com atenção ao ritmo de cada lote.
+              </p>
+            </div>
+            <span class="roast-detail">O começo pede cuidado.</span>
+          </article>
+          <article class="roast-beat">
+            <video
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="./assets/kaffe-ystad-2024-poster.webp"
+              width="854"
+              height="480"
+              aria-label="Grãos de café em movimento no resfriador de uma torrefação em Ystad, Suécia"
+            >
+              <source src="./assets/kaffe-ystad-2024.webm" type="video/webm" />
+            </video>
+            <div class="roast-copy">
+              <h3>Desenvolver</h3>
+              <p>
+                A cor muda, os aromas aparecem. Ajustamos energia e tempo para
+                revelar doçura, sem esconder a origem.
+              </p>
+            </div>
+            <button class="video-toggle" type="button" hidden>
+              Pausar vídeo
+            </button>
+          </article>
+          <article class="roast-beat">
+            <img
+              src="./assets/manual-drip-pour-over-coffee.webp"
+              width="1280"
+              height="852"
+              loading="lazy"
+              alt="Água sendo despejada lentamente sobre café em um filtro de papel"
+            />
+            <div class="roast-copy">
+              <h3>Descansar</h3>
+              <p>
+                Depois de resfriar, o café descansa. Na embalagem, a data de
+                torra ajuda você a encontrar a melhor hora de preparar.
+              </p>
+            </div>
+            <span class="roast-detail">A pausa também faz parte.</span>
+          </article>
+          <div class="roast-progress" aria-hidden="true"><span></span></div>
+        </div>
+      </section>
+
+      <section
+        class="coffees section-space"
+        id="cafes"
+        aria-labelledby="coffees-title"
+      >
+        <div class="section-intro frame">
+          <h2 id="coffees-title" data-reveal>Encontre<br />sua altitude</h2>
+          <p class="lead" data-reveal>
+            Três jeitos de chegar à sua pausa. Em grãos ou moído para o seu
+            método, sempre em pacotes de 250&nbsp;g.
+          </p>
+        </div>
+        <div class="coffee-band">
+          <article class="coffee-card coffee-card-main" data-reveal>
+            <div class="package-stage">
+              <div class="coffee-package package-moss" aria-hidden="true">
+                <span class="package-brand">Torra<br />Alta</span
+                ><span class="package-name">Encosta</span
+                ><span class="package-origin">Cerrado Mineiro<br />250 g</span
+                ><svg viewBox="0 0 220 100">
+                  <path
+                    d="m0 100 65-80 52 51 40-57 63 86H0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="coffee-info">
+              <h3>Encosta</h3>
+              <p class="tasting">Chocolate, castanha e caramelo.</p>
+              <p>
+                Doce e encorpado. Para o primeiro café do dia, puro ou com
+                leite.
+              </p>
+              <dl>
+                <div>
+                  <dt>Origem</dt>
+                  <dd>Cerrado Mineiro, MG</dd>
+                </div>
+                <div>
+                  <dt>Processo</dt>
+                  <dd>Natural · torra média</dd>
+                </div>
+              </dl>
+              <p class="coffee-price">R$ 38 <span>/ 250 g</span></p>
+              <a class="text-link" href="#assinatura" data-coffee="Encosta"
+                >Escolher Encosta</a
+              >
+            </div>
+          </article>
+          <article class="coffee-card" data-reveal>
+            <div class="package-stage stage-light">
+              <div class="coffee-package package-paper" aria-hidden="true">
+                <span class="package-brand">Torra<br />Alta</span
+                ><span class="package-name">Neblina</span
+                ><span class="package-origin"
+                  >Mantiqueira de Minas<br />250 g</span
+                ><svg viewBox="0 0 220 100">
+                  <path
+                    d="m0 100 65-80 52 51 40-57 63 86H0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="coffee-info">
+              <h3>Neblina</h3>
+              <p class="tasting">Mel, laranja e flores brancas.</p>
+              <p>
+                Delicado e cítrico. Um coado para beber devagar e perceber
+                mudar.
+              </p>
+              <dl>
+                <div>
+                  <dt>Origem</dt>
+                  <dd>Mantiqueira de Minas, MG</dd>
+                </div>
+                <div>
+                  <dt>Processo</dt>
+                  <dd>Cereja descascado · torra clara</dd>
+                </div>
+              </dl>
+              <p class="coffee-price">R$ 44 <span>/ 250 g</span></p>
+              <a class="text-link" href="#assinatura" data-coffee="Neblina"
+                >Escolher Neblina</a
+              >
+            </div>
+          </article>
+          <article class="coffee-card" data-reveal>
+            <div class="package-stage stage-dark">
+              <div class="coffee-package package-sage" aria-hidden="true">
+                <span class="package-brand">Torra<br />Alta</span
+                ><span class="package-name">Cume</span
+                ><span class="package-origin"
+                  >Montanhas do Espírito Santo<br />250 g</span
+                ><svg viewBox="0 0 220 100">
+                  <path
+                    d="m0 100 65-80 52 51 40-57 63 86H0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="coffee-info">
+              <h3>Cume</h3>
+              <p class="tasting">Frutas amarelas, rapadura e cacau.</p>
+              <p>
+                Vivo e suculento. Para quem gosta de descobrir outra camada na
+                xícara.
+              </p>
+              <dl>
+                <div>
+                  <dt>Origem</dt>
+                  <dd>Montanhas do Espírito Santo, ES</dd>
+                </div>
+                <div>
+                  <dt>Processo</dt>
+                  <dd>Natural · torra média-clara</dd>
+                </div>
+              </dl>
+              <p class="coffee-price">R$ 48 <span>/ 250 g</span></p>
+              <a class="text-link" href="#assinatura" data-coffee="Cume"
+                >Escolher Cume</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="visit" id="visite" aria-labelledby="visit-title">
+        <img
+          src="./assets/manual-drip-pour-over-coffee.webp"
+          width="1280"
+          height="852"
+          loading="lazy"
+          alt="O ritual de preparar um café coado, com chaleira, filtro e xícara sobre a mesa"
+        />
+        <div class="visit-card" data-reveal>
+          <h2 id="visit-title">A pausa<br />tem lugar</h2>
+          <p>
+            Um coado passado na hora, um pão de queijo quentinho e assunto sobre
+            café. Nosso balcão é um convite para ficar.
+          </p>
+          <p class="visit-location">
+            Casa Torra Alta<br />São Francisco de Paula, Serra Gaúcha
+          </p>
+          <dl class="hours">
+            <div>
+              <dt>Quarta a sexta</dt>
+              <dd>10h às 18h</dd>
+            </div>
+            <div>
+              <dt>Sábado e domingo</dt>
+              <dd>9h às 18h</dd>
+            </div>
+            <div>
+              <dt>Segunda e terça</dt>
+              <dd>Casa fechada</dd>
+            </div>
           </dl>
+          <details>
+            <summary>O que tem no balcão</summary>
+            <dl class="cafe-menu">
+              <div>
+                <dt>Espresso</dt>
+                <dd>R$ 8</dd>
+              </div>
+              <div>
+                <dt>Coado do dia</dt>
+                <dd>R$ 12</dd>
+              </div>
+              <div>
+                <dt>Cappuccino</dt>
+                <dd>R$ 14</dd>
+              </div>
+              <div>
+                <dt>Pão de queijo</dt>
+                <dd>R$ 7</dd>
+              </div>
+            </dl>
+          </details>
+          <p class="small">
+            Casa conceitual: endereço e horários fictícios, sem atendimento ao
+            público.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="subscription section-space frame"
+        id="assinatura"
+        aria-labelledby="subscription-title"
+      >
+        <div class="subscription-heading" data-reveal>
+          <h2 id="subscription-title">A serra,<br />todo mês</h2>
+          <p class="lead">O seu ritual não precisa esperar a próxima viagem.</p>
+          <p>
+            Uma seleção de cafés, torrada na primeira terça do mês. Você escolhe
+            quanto recebe e como prepara.
+          </p>
+        </div>
+        <form class="subscription-form" data-reveal>
+          <fieldset>
+            <legend>Quanto café cabe na sua rotina?</legend>
+            <div class="plan-options">
+              <label
+                ><input type="radio" name="plan" value="500" checked /><span
+                  ><strong>Pausa diária</strong><span>2 pacotes de 250 g</span
+                  ><b>R$ 76 <small>/ mês</small></b></span
+                ></label
+              ><label
+                ><input type="radio" name="plan" value="1000" /><span
+                  ><strong>Casa cheia</strong><span>4 pacotes de 250 g</span
+                  ><b>R$ 144 <small>/ mês</small></b></span
+                ></label
+              >
+            </div>
+          </fieldset>
+          <div class="select-row">
+            <label for="coffee"
+              >Seu café<select id="coffee" name="coffee">
+                <option>Seleção da torrefação</option>
+                <option>Encosta</option>
+                <option>Neblina</option>
+                <option>Cume</option>
+              </select></label
+            ><label for="grind"
+              >Como você prepara?<select id="grind" name="grind">
+                <option>Em grãos</option>
+                <option>Moído para coador</option>
+                <option>Moído para prensa francesa</option>
+                <option>Moído para espresso</option>
+              </select></label
+            >
+          </div>
+          <div
+            class="subscription-summary"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <p id="plan-summary">500 g de café por mês, em grãos.</p>
+            <p class="summary-price" id="plan-price">
+              R$ 76 <span>/ mês</span>
+            </p>
+            <p class="small">
+              Frete calculado em uma operação real. Sem fidelidade.
+            </p>
+          </div>
+          <button class="button" type="submit">Simular assinatura</button>
+          <p class="form-message" id="form-message" role="status"></p>
+          <p class="small">
+            Demonstração de portfólio. Nenhuma cobrança ou coleta de dados.
+          </p>
+          <noscript
+            ><p>
+              Os planos acima são ilustrativos. A simulação interativa precisa
+              de JavaScript; não há venda ou envio de pedidos.
+            </p></noscript
+          >
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <figure>
+          <img
+            src="./assets/curvas-sinuosas-e-paredoes-de-formacao-em.webp"
+            width="1280"
+            height="867"
+            loading="lazy"
+            alt="Paredões de basalto e mata no cânion Itaimbezinho"
+          />
+          <figcaption>Itaimbezinho. Um convite a ir mais devagar.</figcaption>
+        </figure>
+        <div class="footer-note">
+          <p class="lead">A montanha tem seu tempo.<br />O café também.</p>
+          <a class="text-link" href="#inicio">Voltar ao início</a>
+          <p>
+            Feito por
+            <a
+              href="https://github.com/DadoNitz"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Eduardo Nitz</a
+            >.
+          </p>
+          <p class="small">Projeto de portfólio, marca fictícia.</p>
         </div>
       </div>
-      <p class="origin-close" data-reveal>A gente escolhe a origem antes de acender o torrador. Depois, encontra o ponto em que cada café pode ser ele mesmo.</p>
-    </section>
-
-    <section class="roast scene" id="torra" data-scene="roast" aria-labelledby="roast-title">
-      <div class="scene-stage">
-        <h2 id="roast-title">O tempo da torra</h2>
-        <article class="roast-beat">
-          <img src="./assets/roasted-coffee-beans-on-the-surface-01.webp" width="1280" height="853" loading="lazy" alt="Grãos torrados vistos de perto, com texturas e tons diferentes">
-          <div class="roast-copy"><h3>Aquecer</h3><p>O grão perde umidade e começa a mudar. O calor entra aos poucos, com atenção ao ritmo de cada lote.</p></div>
-          <span class="roast-detail">O começo pede cuidado.</span>
-        </article>
-        <article class="roast-beat">
-          <video muted loop playsinline preload="none" poster="./assets/kaffe-ystad-2024-poster.webp" width="854" height="480" aria-label="Grãos de café em movimento no resfriador de uma torrefação em Ystad, Suécia">
-            <source src="./assets/kaffe-ystad-2024.webm" type="video/webm">
-          </video>
-          <div class="roast-copy"><h3>Desenvolver</h3><p>A cor muda, os aromas aparecem. Ajustamos energia e tempo para revelar doçura, sem esconder a origem.</p></div>
-          <button class="video-toggle" type="button" hidden>Pausar vídeo</button>
-        </article>
-        <article class="roast-beat">
-          <img src="./assets/manual-drip-pour-over-coffee.webp" width="1280" height="852" loading="lazy" alt="Água sendo despejada lentamente sobre café em um filtro de papel">
-          <div class="roast-copy"><h3>Descansar</h3><p>Depois de resfriar, o café descansa. Na embalagem, a data de torra ajuda você a encontrar a melhor hora de preparar.</p></div>
-          <span class="roast-detail">A pausa também faz parte.</span>
-        </article>
-        <div class="roast-progress" aria-hidden="true"><span></span></div>
-      </div>
-    </section>
-
-    <section class="coffees section-space" id="cafes" aria-labelledby="coffees-title">
-      <div class="section-intro frame">
-        <h2 id="coffees-title" data-reveal>Encontre<br>sua altitude</h2>
-        <p class="lead" data-reveal>Três jeitos de chegar à sua pausa. Em grãos ou moído para o seu método, sempre em pacotes de 250&nbsp;g.</p>
-      </div>
-      <div class="coffee-band">
-        <article class="coffee-card coffee-card-main" data-reveal>
-          <div class="package-stage"><div class="coffee-package package-moss" aria-hidden="true"><span class="package-brand">Torra<br>Alta</span><span class="package-name">Encosta</span><span class="package-origin">Cerrado Mineiro<br>250 g</span><svg viewBox="0 0 220 100"><path d="m0 100 65-80 52 51 40-57 63 86H0Z" fill="currentColor"/></svg></div></div>
-          <div class="coffee-info"><h3>Encosta</h3><p class="tasting">Chocolate, castanha e caramelo.</p><p>Doce e encorpado. Para o primeiro café do dia, puro ou com leite.</p><dl><div><dt>Origem</dt><dd>Cerrado Mineiro, MG</dd></div><div><dt>Processo</dt><dd>Natural · torra média</dd></div></dl><p class="coffee-price">R$ 38 <span>/ 250 g</span></p><a class="text-link" href="#assinatura" data-coffee="Encosta">Escolher Encosta</a></div>
-        </article>
-        <article class="coffee-card" data-reveal>
-          <div class="package-stage stage-light"><div class="coffee-package package-paper" aria-hidden="true"><span class="package-brand">Torra<br>Alta</span><span class="package-name">Neblina</span><span class="package-origin">Mantiqueira de Minas<br>250 g</span><svg viewBox="0 0 220 100"><path d="m0 100 65-80 52 51 40-57 63 86H0Z" fill="currentColor"/></svg></div></div>
-          <div class="coffee-info"><h3>Neblina</h3><p class="tasting">Mel, laranja e flores brancas.</p><p>Delicado e cítrico. Um coado para beber devagar e perceber mudar.</p><dl><div><dt>Origem</dt><dd>Mantiqueira de Minas, MG</dd></div><div><dt>Processo</dt><dd>Cereja descascado · torra clara</dd></div></dl><p class="coffee-price">R$ 44 <span>/ 250 g</span></p><a class="text-link" href="#assinatura" data-coffee="Neblina">Escolher Neblina</a></div>
-        </article>
-        <article class="coffee-card" data-reveal>
-          <div class="package-stage stage-dark"><div class="coffee-package package-sage" aria-hidden="true"><span class="package-brand">Torra<br>Alta</span><span class="package-name">Cume</span><span class="package-origin">Montanhas do Espírito Santo<br>250 g</span><svg viewBox="0 0 220 100"><path d="m0 100 65-80 52 51 40-57 63 86H0Z" fill="currentColor"/></svg></div></div>
-          <div class="coffee-info"><h3>Cume</h3><p class="tasting">Frutas amarelas, rapadura e cacau.</p><p>Vivo e suculento. Para quem gosta de descobrir outra camada na xícara.</p><dl><div><dt>Origem</dt><dd>Montanhas do Espírito Santo, ES</dd></div><div><dt>Processo</dt><dd>Natural · torra média-clara</dd></div></dl><p class="coffee-price">R$ 48 <span>/ 250 g</span></p><a class="text-link" href="#assinatura" data-coffee="Cume">Escolher Cume</a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="visit" id="visite" aria-labelledby="visit-title">
-      <img src="./assets/manual-drip-pour-over-coffee.webp" width="1280" height="852" loading="lazy" alt="O ritual de preparar um café coado, com chaleira, filtro e xícara sobre a mesa">
-      <div class="visit-card" data-reveal>
-        <h2 id="visit-title">A pausa<br>tem lugar</h2>
-        <p>Um coado passado na hora, um pão de queijo quentinho e assunto sobre café. Nosso balcão é um convite para ficar.</p>
-        <p class="visit-location">Casa Torra Alta<br>São Francisco de Paula, Serra Gaúcha</p>
-        <dl class="hours"><div><dt>Quarta a sexta</dt><dd>10h às 18h</dd></div><div><dt>Sábado e domingo</dt><dd>9h às 18h</dd></div><div><dt>Segunda e terça</dt><dd>Casa fechada</dd></div></dl>
-        <details><summary>O que tem no balcão</summary><dl class="cafe-menu"><div><dt>Espresso</dt><dd>R$ 8</dd></div><div><dt>Coado do dia</dt><dd>R$ 12</dd></div><div><dt>Cappuccino</dt><dd>R$ 14</dd></div><div><dt>Pão de queijo</dt><dd>R$ 7</dd></div></dl></details>
-        <p class="small">Casa conceitual: endereço e horários fictícios, sem atendimento ao público.</p>
-      </div>
-    </section>
-
-    <section class="subscription section-space frame" id="assinatura" aria-labelledby="subscription-title">
-      <div class="subscription-heading" data-reveal><h2 id="subscription-title">A serra,<br>todo mês</h2><p class="lead">O seu ritual não precisa esperar a próxima viagem.</p><p>Uma seleção de cafés, torrada na primeira terça do mês. Você escolhe quanto recebe e como prepara.</p></div>
-      <form class="subscription-form" data-reveal>
-        <fieldset><legend>Quanto café cabe na sua rotina?</legend><div class="plan-options"><label><input type="radio" name="plan" value="500" checked><span><strong>Pausa diária</strong><span>2 pacotes de 250 g</span><b>R$ 76 <small>/ mês</small></b></span></label><label><input type="radio" name="plan" value="1000"><span><strong>Casa cheia</strong><span>4 pacotes de 250 g</span><b>R$ 144 <small>/ mês</small></b></span></label></div></fieldset>
-        <div class="select-row"><label for="coffee">Seu café<select id="coffee" name="coffee"><option>Seleção da torrefação</option><option>Encosta</option><option>Neblina</option><option>Cume</option></select></label><label for="grind">Como você prepara?<select id="grind" name="grind"><option>Em grãos</option><option>Moído para coador</option><option>Moído para prensa francesa</option><option>Moído para espresso</option></select></label></div>
-        <div class="subscription-summary" aria-live="polite" aria-atomic="true"><p id="plan-summary">500 g de café por mês, em grãos.</p><p class="summary-price" id="plan-price">R$ 76 <span>/ mês</span></p><p class="small">Frete calculado em uma operação real. Sem fidelidade.</p></div>
-        <button class="button" type="submit">Simular assinatura</button>
-        <p class="form-message" id="form-message" role="status"></p>
-        <p class="small">Demonstração de portfólio. Nenhuma cobrança ou coleta de dados.</p>
-        <noscript><p>Os planos acima são ilustrativos. A simulação interativa precisa de JavaScript; não há venda ou envio de pedidos.</p></noscript>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-top"><figure><img src="./assets/curvas-sinuosas-e-paredoes-de-formacao-em.webp" width="1280" height="867" loading="lazy" alt="Paredões de basalto e mata no cânion Itaimbezinho"><figcaption>Itaimbezinho. Um convite a ir mais devagar.</figcaption></figure><div class="footer-note"><p class="lead">A montanha tem seu tempo.<br>O café também.</p><a class="text-link" href="#inicio">Voltar ao início</a><p>Feito por <a href="https://github.com/DadoNitz" target="_blank" rel="noopener noreferrer">Eduardo Nitz</a>.</p><p class="small">Projeto de portfólio, marca fictícia.</p></div></div>
-    <p class="footer-wordmark" aria-hidden="true">Torra Alta</p>
-    <details class="photo-credits frame"><summary>Fotografia e créditos</summary><ul><li>Campos do Parque Estadual do Tainhas — Rodrigo Alexandre Geyer Kaspary, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Campos_do_Parque_estadual_do_Tainhas.jpg">Original</a>.</li><li>Pedra dos Três Pontos ES 01 — Martin Thurnherr, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/w/index.php?curid=117677306">Original</a>.</li><li>Roasted coffee beans on the surface. 01 — A S M Jobaer, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans_on_the_surface._01.jpg">Original</a>.</li><li>Manual drip (pour-over) coffee — Kim Sanso, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. <a href="https://commons.wikimedia.org/w/index.php?curid=70214599">Original</a>.</li><li>Curvas sinuosas e paredões de formação em basalto do Canyon Itaimbezinho e ao fundo o Rio do Boi — Portal dos Canyons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://commons.wikimedia.org/w/index.php?curid=49688708">Original</a>.</li><li>Vídeo Kaffe - Ystad-2024 — Foto: Jonn Leffmann, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://commons.wikimedia.org/wiki/File:Kaffe_-_Ystad-2024.ogg">Original</a>.</li></ul></details>
-  </footer>
-</body>
+      <p class="footer-wordmark" aria-hidden="true">Torra Alta</p>
+      <details class="photo-credits frame">
+        <summary>Fotografia e créditos</summary>
+        <ul>
+          <li>
+            Campos do Parque Estadual do Tainhas — Rodrigo Alexandre Geyer
+            Kaspary,
+            <a href="https://creativecommons.org/licenses/by-sa/3.0/"
+              >CC BY-SA 3.0</a
+            >.
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Campos_do_Parque_estadual_do_Tainhas.jpg"
+              >Original</a
+            >.
+          </li>
+          <li>
+            Pedra dos Três Pontos ES 01 — Martin Thurnherr,
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/"
+              >CC BY-SA 4.0</a
+            >.
+            <a href="https://commons.wikimedia.org/w/index.php?curid=117677306"
+              >Original</a
+            >.
+          </li>
+          <li>
+            Roasted coffee beans on the surface. 01 — A S M Jobaer,
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/"
+              >CC BY-SA 4.0</a
+            >.
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans_on_the_surface._01.jpg"
+              >Original</a
+            >.
+          </li>
+          <li>
+            Manual drip (pour-over) coffee — Kim Sanso,
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a
+            >.
+            <a href="https://commons.wikimedia.org/w/index.php?curid=70214599"
+              >Original</a
+            >.
+          </li>
+          <li>
+            Curvas sinuosas e paredões de formação em basalto do Canyon
+            Itaimbezinho e ao fundo o Rio do Boi — Portal dos Canyons,
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/"
+              >CC BY-SA 4.0</a
+            >.
+            <a href="https://commons.wikimedia.org/w/index.php?curid=49688708"
+              >Original</a
+            >.
+          </li>
+          <li>
+            Vídeo Kaffe - Ystad-2024 — Foto: Jonn Leffmann,
+            <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a
+            >.
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Kaffe_-_Ystad-2024.ogg"
+              >Original</a
+            >.
+          </li>
+        </ul>
+      </details>
+    </footer>
+  </body>
 </html>

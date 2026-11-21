@@ -8,7 +8,7 @@ Café especial no tempo da Serra Gaúcha: uma experiência editorial sobre orige
 
 ## Stack
 
-React 19 + TypeScript + Vite. O HTML é pré-renderizado no build (`scripts/prerender.tsx`), então o conteúdo existe antes da hidratação. Animações com [React Bits](https://reactbits.dev) (código do registro oficial `https://reactbits.dev/r/<Componente>-TS-CSS`, copiado para `src/react-bits/`), GSAP e Motion. Fontes, fotografias e vídeo ficam no projeto (`public/assets`).
+React 19 + TypeScript + Vite. O HTML é pré-renderizado no build (`scripts/prerender.tsx`), então o conteúdo existe antes da hidratação. Grãos 3D com three.js, carregado só quando a cena da torra se aproxima da tela. Animações com [React Bits](https://reactbits.dev) (código do registro oficial `https://reactbits.dev/r/<Componente>-TS-CSS`, copiado para `src/react-bits/`), GSAP e Motion. Fontes, fotografias e vídeo ficam no projeto (`public/assets`).
 
 ## Componentes React Bits usados
 
@@ -27,6 +27,8 @@ Com `prefers-reduced-motion`, os componentes ficam estáticos e legíveis (sem i
 ## O que este projeto demonstra
 
 - Direção visual autoral com fotografia ampla, tipografia condensada e uma paleta de areia e musgo. Embalagens desenhadas em CSS, sem mockups de terceiros.
+- Layout revisado com o apple-design: header fixo em material translúcido (o conteúdo passa por baixo), gradiente no hero no lugar da faixa opaca, uma escala de espaçamento única (`--s-1` a `--s-7`), tracking negativo e leading curto nos títulos grandes, cartões com profundidade e feedback de press imediato em links, planos e menus. `prefers-reduced-transparency` e `prefers-contrast` trocam os materiais por superfícies sólidas.
+- Grãos de café 3D na cena da torra: geometria simples (esfera achatada com o sulco), cor do verde ao marrom escuro e brilho de óleo conforme o scroll avança. Renderiza só quando o scroll muda, sem loop ocioso. `three` vem por `import()` dinâmico; com movimento reduzido ou sem WebGL fica uma ilustração SVG estática.
 - Narrativa de torra ligada ao scroll nativo: aquecer, resfriar e descansar. As imagens se cruzam suavemente; o usuário pode voltar a qualquer momento.
 - Molas criticamente amortecidas no press, preservando posição e velocidade ao interromper. Entradas discretas com a Web Animations API e Intersection Observer.
 - Vídeo documental de resfriamento, sem áudio, com pausa manual. Para ao sair da cena, ocultar a aba ou ativar movimento reduzido.
@@ -42,11 +44,15 @@ Node.js 24 ou superior:
 ```sh
 npm install
 npm run dev      # servidor local
-npm test         # cálculo dos planos
+npm test         # cálculo dos planos e cor da torra
 npm run build    # tsc + vite build + pré-renderização em dist/
 ```
 
 Não há variáveis de ambiente ou credenciais.
+
+### Imagens novas
+
+[docs/image-briefs.md](docs/image-briefs.md) descreve quatro fotografias (caminho, proporção, onde entram e prompt). Salve o arquivo em `public/img/<nome>.webp` e rode o build: a página passa a usar a foto nova e o texto alternativo dela. Sem o arquivo, a foto atual continua, sem requisição 404.
 
 ## GitHub Pages
 
@@ -54,7 +60,7 @@ O workflow [pages.yml](.github/workflows/pages.yml) instala, testa os planos, ge
 
 Quando você decidir publicar o repositório, selecione **Settings → Pages → Source → GitHub Actions**. O workflow responde a commits na branch `main` e também permite execução manual. Configuração baseada na [documentação oficial de workflows do GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
-Nenhum repositório remoto foi criado e nenhum push ou deploy foi executado durante a construção.
+Publicado em [github.com/DadoNitz/torra-alta](https://github.com/DadoNitz/torra-alta).
 
 ## Validação
 
@@ -62,7 +68,7 @@ Screenshots revisados em **1440, 768 e 390 px**, incluindo a página inteira. Ta
 
 Testados em Chrome headless: navegação e foco por teclado, escolha de café, troca de plano por setas, envio da simulação com Enter, pausa do vídeo, reversão do scroll, ausência de JavaScript e abertura por `file://` (antes da migração). O preview deste README foi gerado em Chrome headless a 1440 × 900.
 
-Lighthouse (padrão mobile, `vite preview` local, após a migração para React): **97 performance · 100 acessibilidade · 100 boas práticas · 92 SEO** (o SEO perde pontos só porque o servidor local não tem `robots.txt`). Métricas e limites da validação estão registrados em [docs/validation.md](docs/validation.md). Não houve teste em Safari, Firefox, leitor de tela real ou celular físico, nem validação do workflow em um repositório remoto.
+Lighthouse (padrão mobile, `vite preview` local, após o layout apple-design e os grãos 3D): **99 performance · 100 acessibilidade · 100 boas práticas · 92 SEO**, LCP 0.8 s, CLS 0; o three.js não entra no carregamento inicial (o SEO perde pontos só porque o servidor local não tem `robots.txt`). Métricas e limites da validação estão registrados em [docs/validation.md](docs/validation.md). Não houve teste em Safari, Firefox, leitor de tela real ou celular físico, nem validação do workflow em um repositório remoto.
 
 ## Direção e conteúdo
 

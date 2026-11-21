@@ -18,7 +18,7 @@ Nome Torra Alta; Campos de Cima da Serra; araucárias; manhã fria; café brasil
 
 - Hero: café especial torrado na Serra Gaúcha → paisagem regional e ação “Conheça os cafés”. Título: “Café no tempo da serra”. Apoio: “Cafés brasileiros, torrados em pequenos lotes na Serra Gaúcha. Para quem gosta de fazer da xícara uma pausa.”
 - Origem: a serra é a casa da torra, não a origem de todo grão → fotografia de cafezal no Espírito Santo, regiões e métodos explícitos. Título: “A origem vem primeiro”.
-- Torra: o calor revela o perfil de cada lote → sequência “Aquecer”, “Desenvolver”, “Descansar”, com explicações concretas. Título: “O tempo da torra”.
+- Torra: o calor revela o perfil de cada lote → sequência “Aquecer”, “Resfriar”, “Descansar”, com explicações concretas. Título: “O tempo da torra”.
 - Cafés: perfis diferentes para gostos diferentes → três embalagens autorais, notas, origem, processo, peso e preço. Título: “Encontre sua altitude”.
 - Visite: um lugar para provar sem pressa → horário, cardápio curto e proposta de experiência. Título: “A pausa tem lugar”.
 - Assinatura: rotina de café ajustada ao consumo → dois planos, moagem e resumo. Título: “A serra, todo mês”.

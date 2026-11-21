@@ -1,0 +1,6 @@
+.nitz/
+.taste-skill/
+node_modules/
+dist/
+.env*
+*.log

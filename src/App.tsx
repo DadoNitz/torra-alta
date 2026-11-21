@@ -8,6 +8,8 @@ import Magnet from './react-bits/Magnet';
 import ScrollFloat from './react-bits/ScrollFloat';
 import SplitText from './react-bits/SplitText';
 import TiltedCard from './react-bits/TiltedCard';
+import { ROAST_STOPS } from './roast-color';
+import { hasPhoto, photo } from './photos';
 
 const SPARKS = ['#c9b78a', '#e9e2d0'];
 
@@ -75,17 +77,14 @@ export default function App() {
         <div className="origin-mosaic">
           <figure className="origin-photo" data-reveal>
             <img
-              src="./assets/pedra-dos-tres-pontos-es-01.webp"
-              srcSet="
-                ./assets/origem-mobile.webp                640w,
-                ./assets/pedra-dos-tres-pontos-es-01.webp 1280w
-              "
+              src={photo('origem-colheita.webp', './assets/pedra-dos-tres-pontos-es-01.webp')}
+              srcSet={hasPhoto('origem-colheita.webp') ? undefined : './assets/origem-mobile.webp 640w, ./assets/pedra-dos-tres-pontos-es-01.webp 1280w'}
               sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 900px) 55vw, 65vw"
               width="1280"
               height="853"
               loading="lazy"
               decoding="async"
-              alt="Cerejas de café maduras diante da Pedra dos Três Pontos, no Espírito Santo"
+              alt={hasPhoto('origem-colheita.webp') ? 'Mãos colhendo cerejas de café maduras em um cafezal de montanha' : 'Cerejas de café maduras diante da Pedra dos Três Pontos, no Espírito Santo'}
             />
             <figcaption>
               Café crescendo aos pés da Pedra dos Três Pontos, no Espírito
@@ -138,11 +137,11 @@ export default function App() {
           <h2 id="roast-title">O tempo da torra</h2>
           <article className="roast-beat">
             <img
-              src="./assets/roasted-coffee-beans-on-the-surface-01.webp"
+              src={photo('torra-tambor.webp', './assets/roasted-coffee-beans-on-the-surface-01.webp')}
               width="1280"
               height="853"
               loading="lazy"
-              alt="Grãos torrados vistos de perto, com texturas e tons diferentes"
+              alt={hasPhoto('torra-tambor.webp') ? 'Grãos de café girando dentro do tambor de um torrador, iluminados pela chama' : 'Grãos torrados vistos de perto, com texturas e tons diferentes'}
             />
             <div className="roast-copy">
               <h3>Aquecer</h3>
@@ -179,11 +178,11 @@ export default function App() {
           </article>
           <article className="roast-beat">
             <img
-              src="./assets/manual-drip-pour-over-coffee.webp"
+              src={photo('descanso-embalagem.webp', './assets/manual-drip-pour-over-coffee.webp')}
               width="1280"
               height="852"
               loading="lazy"
-              alt="Água sendo despejada lentamente sobre café em um filtro de papel"
+              alt={hasPhoto('descanso-embalagem.webp') ? 'Pacotes de café fechados sobre uma bancada de madeira, com a data de torra à mostra' : 'Água sendo despejada lentamente sobre café em um filtro de papel'}
             />
             <div className="roast-copy">
               <h3>Descansar</h3>
@@ -194,6 +193,18 @@ export default function App() {
             </div>
             <span className="roast-detail">A pausa também faz parte.</span>
           </article>
+          <figure className="roast-beans" aria-hidden="true">
+            <canvas></canvas>
+            <svg className="roast-beans-static" viewBox="0 0 200 60">
+              {ROAST_STOPS.slice(0, 4).map((c, i) => (
+                <g key={c} transform={`translate(${28 + i * 48} 30) rotate(${-18 + i * 12})`}>
+                  <ellipse rx="15" ry="21" fill={c} />
+                  <path d="M0-17C5-8-5 8 0 17" stroke="rgba(0,0,0,.35)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                </g>
+              ))}
+            </svg>
+            <figcaption><span>Cor do grão</span> <b>Do verde ao torrado</b></figcaption>
+          </figure>
           <div className="roast-progress" aria-hidden="true"><span></span></div>
         </div>
       </section>
@@ -205,7 +216,7 @@ export default function App() {
       >
         <div className="section-intro frame">
           <ScrollFloat effect="float">Encontre sua altitude</ScrollFloat>
-          <BlurText className="lead" text="Três jeitos de chegar à sua pausa. Em grãos ou moído para o seu método, sempre em pacotes de 250 g." delay={40} />
+          <BlurText className="lead" text="Três jeitos de chegar à sua pausa. Em grãos ou moído para o seu método, sempre em pacotes de 250 g." delay={40} />
         </div>
         <div className="coffee-band">
           <article className="coffee-card coffee-card-main" data-reveal>
@@ -323,11 +334,11 @@ export default function App() {
 
       <section className="visit" id="visite" aria-label="A pausa tem lugar">
         <img
-          src="./assets/manual-drip-pour-over-coffee.webp"
+          src={photo('casa-balcao.webp', './assets/manual-drip-pour-over-coffee.webp')}
           width="1280"
           height="852"
           loading="lazy"
-          alt="O ritual de preparar um café coado, com chaleira, filtro e xícara sobre a mesa"
+          alt={hasPhoto('casa-balcao.webp') ? 'Balcão de madeira de uma cafeteria na serra, com café coado e pão de queijo' : 'O ritual de preparar um café coado, com chaleira, filtro e xícara sobre a mesa'}
         />
         <div className="visit-card" data-reveal>
           <ScrollFloat effect="float">A pausa tem lugar</ScrollFloat>

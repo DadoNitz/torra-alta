@@ -1,3 +1,5 @@
+import { roastStage } from './roast-color';
+
 export function startPageMotion() {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const scene = document.querySelector<HTMLElement>('.scene')!;
@@ -15,6 +17,28 @@ export function startPageMotion() {
   const video = scene.querySelector('video')!;
   const toggle = scene.querySelector<HTMLButtonElement>('.video-toggle')!;
   let frame = 0, videoVisible = false, videoPaused = false, activeBeat = 0;
+  const beansBox = scene.querySelector<HTMLElement>('.roast-beans')!;
+  const beansLabel = beansBox.querySelector('b')!;
+  let beans: { set(p: number): void; dispose(): void } | undefined, beansWanted = false;
+
+  // three.js is fetched only when the roast scene approaches the viewport.
+  const beansObserver = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting || beans || beansWanted || reduced.matches) return;
+    beansWanted = true;
+    import('./roast-beans').then(({ mountBeans }) => {
+      if (!beansWanted || reduced.matches) return;
+      beans = mountBeans(beansBox.querySelector('canvas')!);
+      beansBox.classList.toggle('is-3d', !!beans);
+      frame = 0; render();
+    }, () => { beansWanted = false; });
+  }, { rootMargin: '100% 0px' });
+  beansObserver.observe(scene);
+  function dropBeans() {
+    beansWanted = false;
+    beans?.dispose(); beans = undefined;
+    beansBox.classList.remove('is-3d');
+    beansLabel.textContent = 'Do verde ao torrado';
+  }
 
   function syncVideo() {
     const play = videoVisible && activeBeat === 1 && !videoPaused && !reduced.matches && !document.hidden;
@@ -46,6 +70,8 @@ export function startPageMotion() {
       beat.querySelector<HTMLElement>('img,video')!.style.transform = `scale(1.06) translateY(${(progress - .5) * -4}%)`;
     });
     progressBar.style.transform = `scaleX(${progress})`;
+    beans?.set(progress);
+    beansLabel.textContent = roastStage(progress);
     if (scrollY < innerHeight) heroImage.style.transform = `translateY(${Math.min(scrollY * .12, 90)}px) scale(1.025)`;
   }
   function queue() { if (!frame) frame = requestAnimationFrame(render); }
@@ -53,6 +79,8 @@ export function startPageMotion() {
     scene.classList.toggle('is-live', !reduced.matches);
     scene.classList.toggle('is-rest', reduced.matches);
     transcript.hidden = reduced.matches;
+    if (reduced.matches) dropBeans();
+    else { beansObserver.disconnect(); beansObserver.observe(scene); }
     toggle.hidden = reduced.matches;
     beats.forEach(beat => {
       const copy = beat.querySelector<HTMLElement>('.roast-copy')!;
@@ -109,6 +137,8 @@ export function startPageMotion() {
     reveal.disconnect();
     pressCleanups.forEach(c => c());
     videoObserver.disconnect();
+    beansObserver.disconnect();
+    dropBeans();
     transcript.remove();
     toggle.removeEventListener('click', toggleVideo);
     document.removeEventListener('visibilitychange', syncVideo);

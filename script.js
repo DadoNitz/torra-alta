@@ -12,6 +12,7 @@ function subscriptionSummary(grams, coffee, grind) {
 function init() {
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const form = document.querySelector(".subscription-form");
+  form.querySelector('[type="submit"]').disabled = false;
   const coffee = form.elements.coffee;
   const grind = form.elements.grind;
   const message = document.querySelector("#form-message");
@@ -124,6 +125,15 @@ function init() {
 
   const scene = document.querySelector(".scene");
   const beats = [...scene.querySelectorAll(".roast-beat")];
+  // Keep the entire process readable to assistive technology while visual frames change.
+  const transcript = document.createElement("ol");
+  transcript.className = "sr-only";
+  beats.forEach((beat) => {
+    const item = document.createElement("li");
+    item.textContent = `${beat.querySelector("h3").textContent}. ${beat.querySelector("p").textContent}`;
+    transcript.append(item);
+  });
+  scene.append(transcript);
   const progressBar = scene.querySelector(".roast-progress span");
   const heroImage = document.querySelector(".hero-photo");
   const video = scene.querySelector("video");
@@ -179,7 +189,7 @@ function init() {
       beat.style.opacity = Math.max(0, 1 - Math.abs(position - index));
       beat.classList.toggle("is-active", index === active);
       const copy = beat.querySelector(".roast-copy");
-      copy.style.opacity = index === active ? 1 : 0;
+      copy.style.visibility = index === active ? "visible" : "hidden";
       copy.style.transform = `translateY(${(index - position) * 25}px)`;
       beat.querySelector("img,video").style.transform =
         `scale(1.06) translateY(${(progress - 0.5) * -4}%)`;
@@ -200,8 +210,12 @@ function init() {
     });
     scene.classList.toggle("is-live", !reduced.matches);
     scene.classList.toggle("is-rest", reduced.matches);
+    transcript.hidden = reduced.matches;
     videoToggle.hidden = reduced.matches;
     beats.forEach((beat) => {
+      beat
+        .querySelector(".roast-copy")
+        .setAttribute("aria-hidden", String(!reduced.matches));
       if (reduced.matches) {
         beat.style.opacity = "";
         beat.querySelector(".roast-copy").style.cssText = "";

@@ -1,0 +1,30 @@
+﻿import {Browser, sleep} from 'file:///C:/Users/Dado/.claude/skills/synced/3a16b5e4-5360-47a1-9849-5808e22eabe5_72fe8b1d-01e1-4239-a75c-bf5d22c21c41/design-taste-frontend/scripts/lib/cdp.mjs';
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+const browser=await Browser.launch();const checks=[];
+try{
+ const page=await browser.newPage();await page.goto('http://127.0.0.1:4173');
+ await page.eval(()=>document.fonts.ready);assert.equal(await page.eval(()=>document.fonts.check('20px "Bebas Neue"')),true);checks.push('Local fonts loaded');
+ await page.eval(()=>document.querySelector('[data-coffee="Neblina"]').click());await sleep(800);
+ assert.equal(await page.eval(()=>document.querySelector('#coffee').value),'Neblina');
+ assert.equal(await page.eval(()=>location.hash),'#assinatura');checks.push('Coffee card transfers Neblina into subscription');
+ await page.eval(()=>document.querySelector('input[name="plan"]').focus());
+ for(const type of ['keyDown','keyUp'])await page.send('Input.dispatchKeyEvent',{type,key:'ArrowRight',code:'ArrowRight',windowsVirtualKeyCode:39});
+ assert.equal(await page.eval(()=>document.querySelector('.subscription-form').elements.plan.value),'1000');checks.push('Radio plans work with arrow keys');
+ await page.eval(()=>{const s=document.querySelector('#grind');s.value='Moído para coador';s.dispatchEvent(new Event('change',{bubbles:true}));document.querySelector('#coffee').focus()});
+ for(const type of ['keyDown','keyUp'])await page.send('Input.dispatchKeyEvent',{type,key:'Tab',code:'Tab',windowsVirtualKeyCode:9});
+ assert.equal(await page.eval(()=>document.activeElement.id),'grind');assert.notEqual(await page.eval(()=>getComputedStyle(document.activeElement).outlineStyle),'none');checks.push('Tab order and visible focus');
+ await page.eval(()=>document.querySelector('[type="submit"]').focus());
+ for(const type of ['keyDown','keyUp'])await page.send('Input.dispatchKeyEvent',{type,key:'Enter',code:'Enter',windowsVirtualKeyCode:13,text:type==='keyDown'?'\r':''});
+ assert.match(await page.eval(()=>document.querySelector('#form-message').textContent),/4 pacotes.*neblina.*coador.*144/);checks.push('Enter submits a local simulation with the correct selection');
+ await page.eval(()=>{document.documentElement.style.scrollBehavior='auto';const s=document.querySelector('.scene');scrollTo(0,s.offsetTop+(s.offsetHeight-innerHeight)/2)});await sleep(1500);
+ assert.equal(await page.eval(()=>document.querySelector('.video-toggle').hidden),false);
+ await page.eval(()=>document.querySelector('.video-toggle').click());assert.equal(await page.eval(()=>document.querySelector('video').paused),true);checks.push('Visible video can be paused');
+ for(const progress of [0,.5,1,0]){await page.eval(p=>{const s=document.querySelector('.scene');scrollTo(0,s.offsetTop+(s.offsetHeight-innerHeight)*p)},progress);await sleep(80);assert.equal(await page.eval(()=>document.querySelectorAll('.roast-beat.is-active').length),1)}checks.push('Scroll scene reverses without locking input');
+ await page.eval(()=>scrollTo(0,0));await sleep(400);await page.screenshot({path:'docs/preview.png',format:'png'});
+ assert.equal(page.consoleErrors.length,0);checks.push('No browser console errors');
+ const reduced=await browser.newPage({reducedMotion:true});await reduced.goto('http://127.0.0.1:4173');assert.equal(await reduced.eval(()=>document.querySelector('.scene').classList.contains('is-rest')),true);assert.equal(await reduced.eval(()=>document.querySelector('video').paused),true);assert.equal(await reduced.eval(()=>[...document.querySelectorAll('.roast-copy')].every(e=>getComputedStyle(e).opacity==='1')),true);checks.push('Reduced motion shows all process steps and pauses video');
+ const plain=await browser.newPage();await plain.send('Emulation.setScriptExecutionDisabled',{value:true});await plain.goto('http://127.0.0.1:4173');assert.equal(await plain.eval(()=>document.querySelectorAll('.roast-beat').length),3);assert.equal(await plain.eval(()=>document.querySelector('[type="submit"]').disabled),true);checks.push('Without JavaScript, content remains readable and simulation is disabled');
+ await page.goto('file:///D:/portfolio/torra-alta/index.html');assert.equal(await page.eval(()=>document.querySelector('h1').innerText.includes('Café')),true);assert.equal(await page.eval(()=>document.querySelector('.hero-photo').naturalWidth>0),true);checks.push('Direct file opening works');
+ await writeFile('.taste-skill/browser-checks.json',JSON.stringify({checks},null,2));console.log(checks.map(x=>'PASS '+x).join('\n'));
+}finally{await browser.close()}

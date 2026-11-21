@@ -1,0 +1,125 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.20.0
+2 info using node@v26.12.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\portfolio\torra-alta\.npmrc
+5 silly config load:file:C:\Users\Dado\.npmrc
+6 silly config load:file:C:\Users\Dado\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install react react-dom motion gsap
+8 verbose argv "install" "--cache" ".taste-skill/npm-cache" "react" "react-dom" "motion" "gsap"
+9 verbose logfile logs-max:10 dir:D:\portfolio\torra-alta\.taste-skill\npm-cache\_logs\2026-11-21T06_44_32_554Z-
+10 verbose logfile D:\portfolio\torra-alta\.taste-skill\npm-cache\_logs\2026-11-21T06_44_32_554Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4395630592 maxSize:1098907648 maxEntrySize:549453824
+13 silly idealTree buildDeps
+14 silly fetch manifest react@*
+15 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/react 411ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/react set size:undefined disposed:false
+18 silly fetch manifest react-dom@*
+19 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/react-dom 222ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/react-dom set size:undefined disposed:false
+22 silly fetch manifest motion@*
+23 silly packumentCache full:https://registry.npmjs.org/motion cache-miss
+24 http fetch GET 200 https://registry.npmjs.org/motion 90ms (cache miss)
+25 silly packumentCache full:https://registry.npmjs.org/motion set size:undefined disposed:false
+26 silly fetch manifest gsap@*
+27 silly packumentCache full:https://registry.npmjs.org/gsap cache-miss
+28 http fetch GET 200 https://registry.npmjs.org/gsap 60ms (cache miss)
+29 silly packumentCache full:https://registry.npmjs.org/gsap set size:undefined disposed:false
+30 silly placeDep ROOT gsap@3.15.1 OK for: torra-alta@1.0.0 want: *
+31 silly placeDep ROOT motion@14.14.0 OK for: torra-alta@1.0.0 want: *
+32 silly placeDep ROOT react@19.3.1 OK for: torra-alta@1.0.0 want: *
+33 silly placeDep ROOT react-dom@19.3.1 OK for: torra-alta@1.0.0 want: *
+34 silly fetch manifest tslib@^2.4.0
+35 silly packumentCache full:https://registry.npmjs.org/tslib cache-miss
+36 silly fetch manifest framer-motion@14.14.0
+37 silly packumentCache full:https://registry.npmjs.org/framer-motion cache-miss
+38 silly fetch manifest scheduler@^0.28.0
+39 silly packumentCache full:https://registry.npmjs.org/scheduler cache-miss
+40 http fetch GET 200 https://registry.npmjs.org/framer-motion 194ms (cache miss)
+41 silly packumentCache full:https://registry.npmjs.org/framer-motion set size:undefined disposed:false
+42 http fetch GET 200 https://registry.npmjs.org/tslib 239ms (cache revalidated)
+43 silly packumentCache full:https://registry.npmjs.org/tslib set size:111280 disposed:false
+44 http fetch GET 200 https://registry.npmjs.org/scheduler 496ms (cache miss)
+45 silly packumentCache full:https://registry.npmjs.org/scheduler set size:undefined disposed:false
+46 silly fetch manifest react@^18.0.0 || ^19.0.0
+47 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+48 http cache https://registry.npmjs.org/react 16ms (cache hit)
+49 silly packumentCache full:https://registry.npmjs.org/react set size:7151066 disposed:false
+50 silly fetch manifest react-dom@^18.0.0 || ^19.0.0
+51 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+52 http cache https://registry.npmjs.org/react-dom 22ms (cache hit)
+53 silly packumentCache full:https://registry.npmjs.org/react-dom set size:9668537 disposed:false
+54 silly fetch manifest remix@^3.1.0
+55 silly packumentCache full:https://registry.npmjs.org/remix cache-miss
+56 http fetch GET 200 https://registry.npmjs.org/remix 327ms (cache miss)
+57 silly packumentCache full:https://registry.npmjs.org/remix set size:undefined disposed:false
+58 silly placeDep ROOT framer-motion@14.14.0 OK for: motion@14.14.0 want: 14.14.0
+59 silly placeDep ROOT tslib@2.9.1 OK for: motion@14.14.0 want: ^2.4.0
+60 silly fetch manifest motion-dom@14.14.0
+61 silly packumentCache full:https://registry.npmjs.org/motion-dom cache-miss
+62 silly fetch manifest motion-utils@14.7.0
+63 silly packumentCache full:https://registry.npmjs.org/motion-utils cache-miss
+64 http fetch GET 200 https://registry.npmjs.org/motion-dom 57ms (cache miss)
+65 silly packumentCache full:https://registry.npmjs.org/motion-dom set size:undefined disposed:false
+66 http fetch GET 200 https://registry.npmjs.org/motion-utils 225ms (cache miss)
+67 silly packumentCache full:https://registry.npmjs.org/motion-utils set size:undefined disposed:false
+68 silly placeDep ROOT motion-dom@14.14.0 OK for: framer-motion@14.14.0 want: 14.14.0
+69 silly placeDep ROOT motion-utils@14.7.0 OK for: framer-motion@14.14.0 want: 14.7.0
+70 silly placeDep ROOT scheduler@0.28.0 OK for: react-dom@19.3.1 want: ^0.28.0
+71 silly reify moves {}
+72 silly audit bulk request {
+72 silly audit   gsap: [ '3.15.1' ],
+72 silly audit   motion: [ '14.14.0' ],
+72 silly audit   react: [ '19.3.1' ],
+72 silly audit   'react-dom': [ '19.3.1' ],
+72 silly audit   'framer-motion': [ '14.14.0' ],
+72 silly audit   tslib: [ '2.9.1' ],
+72 silly audit   'motion-dom': [ '14.14.0' ],
+72 silly audit   'motion-utils': [ '14.7.0' ],
+72 silly audit   scheduler: [ '0.28.0' ]
+72 silly audit }
+73 http cache scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz 0ms (cache hit)
+74 http cache motion-dom@https://registry.npmjs.org/motion-dom/-/motion-dom-14.14.0.tgz 0ms (cache hit)
+75 http cache framer-motion@https://registry.npmjs.org/framer-motion/-/framer-motion-14.14.0.tgz 0ms (cache hit)
+76 http cache motion-utils@https://registry.npmjs.org/motion-utils/-/motion-utils-14.7.0.tgz 0ms (cache hit)
+77 http cache react@https://registry.npmjs.org/react/-/react-19.3.1.tgz 0ms (cache hit)
+78 http cache tslib@https://registry.npmjs.org/tslib/-/tslib-2.9.1.tgz 0ms (cache hit)
+79 http cache react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz 0ms (cache hit)
+80 http cache motion@https://registry.npmjs.org/motion/-/motion-14.14.0.tgz 0ms (cache hit)
+81 http cache gsap@https://registry.npmjs.org/gsap/-/gsap-3.15.1.tgz 0ms (cache hit)
+82 silly tarball no local data for scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz. Extracting by manifest.
+83 silly tarball no local data for motion-dom@https://registry.npmjs.org/motion-dom/-/motion-dom-14.14.0.tgz. Extracting by manifest.
+84 silly tarball no local data for framer-motion@https://registry.npmjs.org/framer-motion/-/framer-motion-14.14.0.tgz. Extracting by manifest.
+85 silly tarball no local data for motion-utils@https://registry.npmjs.org/motion-utils/-/motion-utils-14.7.0.tgz. Extracting by manifest.
+86 silly tarball no local data for react@https://registry.npmjs.org/react/-/react-19.3.1.tgz. Extracting by manifest.
+87 silly tarball no local data for react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz. Extracting by manifest.
+88 silly tarball no local data for motion@https://registry.npmjs.org/motion/-/motion-14.14.0.tgz. Extracting by manifest.
+89 silly tarball no local data for gsap@https://registry.npmjs.org/gsap/-/gsap-3.15.1.tgz. Extracting by manifest.
+90 http fetch GET 200 https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz 73ms (cache miss)
+91 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 233ms
+92 silly audit report {}
+93 http fetch GET 200 https://registry.npmjs.org/react/-/react-19.3.1.tgz 323ms (cache miss)
+94 http fetch GET 200 https://registry.npmjs.org/motion-utils/-/motion-utils-14.7.0.tgz 326ms (cache miss)
+95 http fetch GET 200 https://registry.npmjs.org/motion/-/motion-14.14.0.tgz 356ms (cache miss)
+96 http fetch GET 200 https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz 555ms (cache miss)
+97 http fetch GET 200 https://registry.npmjs.org/gsap/-/gsap-3.15.1.tgz 669ms (cache miss)
+98 http fetch GET 200 https://registry.npmjs.org/motion-dom/-/motion-dom-14.14.0.tgz 849ms (cache miss)
+99 http fetch GET 200 https://registry.npmjs.org/framer-motion/-/framer-motion-14.14.0.tgz 1255ms (cache miss)
+100 silly ADD node_modules/scheduler
+101 silly ADD node_modules/motion-utils
+102 silly ADD node_modules/motion-dom
+103 silly ADD node_modules/tslib
+104 silly ADD node_modules/framer-motion
+105 silly ADD node_modules/react-dom
+106 silly ADD node_modules/react
+107 silly ADD node_modules/motion
+108 silly ADD node_modules/gsap
+109 verbose cwd D:\portfolio\torra-alta
+110 verbose os Windows_NT 10.0.26300
+111 verbose node v26.12.0
+112 verbose npm  v11.20.0
+113 verbose exit 0
+114 info ok

@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Local fonts loaded",
+    "Coffee card transfers Neblina into subscription",
+    "Radio plans work with arrow keys",
+    "Tab order and visible focus",
+    "Enter submits a local simulation with the correct selection",
+    "Visible video can be paused",
+    "Scroll scene reverses without locking input",
+    "No browser console errors",
+    "Reduced motion shows all process steps and pauses video",
+    "Without JavaScript, content remains readable and simulation is disabled",
+    "Direct file opening works"
+  ]
+}

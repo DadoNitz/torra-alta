@@ -1,0 +1,34 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.20.0
+2 info using node@v26.12.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\portfolio\torra-alta\.npmrc
+5 silly config load:file:C:\Users\Dado\.npmrc
+6 silly config load:file:C:\Users\Dado\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm exec prettier --write index.html style.css script.js tests/subscription.test.cjs .github/workflows/pages.yml
+8 verbose argv "exec" "--cache" ".taste-skill/npm-cache" "--yes" "--package" "prettier" "--" "prettier" "--write" "index.html" "style.css" "script.js" "tests/subscription.test.cjs" ".github/workflows/pages.yml"
+9 verbose logfile logs-max:10 dir:D:\portfolio\torra-alta\.taste-skill\npm-cache\_logs\2026-11-21T06_20_06_081Z-
+10 verbose logfile D:\portfolio\torra-alta\.taste-skill\npm-cache\_logs\2026-11-21T06_20_06_081Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4395630592 maxSize:1098907648 maxEntrySize:549453824
+13 http fetch GET 200 https://registry.npmjs.org/prettier 425ms (cache miss)
+14 silly packumentCache heap:4395630592 maxSize:1098907648 maxEntrySize:549453824
+15 silly idealTree buildDeps
+16 silly fetch manifest prettier@3.10.1
+17 silly packumentCache full:https://registry.npmjs.org/prettier cache-miss
+18 http fetch GET 200 https://registry.npmjs.org/prettier 101ms (cache miss)
+19 silly packumentCache full:https://registry.npmjs.org/prettier set size:undefined disposed:false
+20 silly placeDep ROOT prettier@3.10.1 OK for:  want: 3.10.1
+21 silly reify moves {}
+22 silly audit bulk request { prettier: [ '3.10.1' ] }
+23 http cache prettier@https://registry.npmjs.org/prettier/-/prettier-3.10.1.tgz 0ms (cache hit)
+24 silly tarball no local data for prettier@https://registry.npmjs.org/prettier/-/prettier-3.10.1.tgz. Extracting by manifest.
+25 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 227ms
+26 silly audit report {}
+27 http fetch GET 200 https://registry.npmjs.org/prettier/-/prettier-3.10.1.tgz 830ms (cache miss)
+28 verbose cwd D:\portfolio\torra-alta
+29 verbose os Windows_NT 10.0.26300
+30 verbose node v26.12.0
+31 verbose npm  v11.20.0
+32 verbose exit 0
+33 info ok

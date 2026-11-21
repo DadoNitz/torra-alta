@@ -1,0 +1,61 @@
+<form onSubmit={submit} onChange={() => setMessage('')} className="subscription-form" data-reveal>
+          <fieldset>
+            <legend>Quanto café cabe na sua rotina?</legend>
+            <div className="plan-options">
+              <label
+                ><input type="radio" name="plan" value="500" checked /><span
+                  ><strong>Pausa diária</strong><span>2 pacotes de 250 g</span
+                  ><b>R$ 76 <small>/ mês</small></b></span
+                ></label
+              ><label
+                ><input type="radio" name="plan" value="1000" checked={plan === "1000"} onChange={() => setPlan("1000")} /><span
+                  ><strong>Casa cheia</strong><span>4 pacotes de 250 g</span
+                  ><b>R$ 144 <small>/ mês</small></b></span
+                ></label
+              >
+            </div>
+          </fieldset>
+          <div className="select-row">
+            <label htmlFor="coffee"
+              >Seu café<select id="coffee" name="coffee" value={coffee} onChange={event => onCoffeeChange(event.target.value)}>
+                <option>Seleção da torrefação</option>
+                <option>Encosta</option>
+                <option>Neblina</option>
+                <option>Cume</option>
+              </select></label
+            ><label htmlFor="grind"
+              >Como você prepara?<select id="grind" name="grind" value={grind} onChange={event => setGrind(event.target.value)}>
+                <option>Em grãos</option>
+                <option>Moído para coador</option>
+                <option>Moído para prensa francesa</option>
+                <option>Moído para espresso</option>
+              </select></label
+            >
+          </div>
+          <div
+            className="subscription-summary"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <p id="plan-summary">{summary.text}</p>
+            <p className="summary-price" id="plan-price">
+              R$ {summary.price} <span>/ mês</span>
+            </p>
+            <p className="small">
+              Frete calculado em uma operação real. Sem fidelidade.
+            </p>
+          </div>
+          <button className="button" type="submit" disabled={!hydrated}>
+            Simular assinatura
+          </button>
+          <p className="form-message" id="form-message" role="status">{message}</p>
+          <p className="small">
+            Demonstração de portfólio. Nenhuma cobrança ou coleta de dados.
+          </p>
+          <noscript
+            ><p>
+              Os planos acima são ilustrativos. A simulação interativa precisa
+              de JavaScript; não há venda ou envio de pedidos.
+            </p></noscript
+          >
+        </form>

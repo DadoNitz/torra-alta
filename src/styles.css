@@ -3,14 +3,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./assets/fonts/bebas-neue.woff2") format("woff2");
+  src: url("/assets/fonts/bebas-neue.woff2") format("woff2");
 }
 @font-face {
   font-family: "EB Garamond";
   font-style: normal;
   font-weight: 400 500;
   font-display: swap;
-  src: url("./assets/fonts/eb-garamond.woff2") format("woff2");
+  src: url("/assets/fonts/eb-garamond.woff2") format("woff2");
 }
 :root {
   --bg: #ddd6c6;
@@ -1264,4 +1264,18 @@ summary {
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+/* React Bits ScrollFloat inherits the site's heading style */
+.scroll-float {
+  margin: 0;
+}
+.scroll-float-text {
+  font: inherit;
+  text-align: left;
+  line-height: inherit;
+  max-width: 11ch;
+}
+.tilted-card {
+  margin: 0 auto;
 }

@@ -1,6 +1,2 @@
-.nitz/
-.taste-skill/
-node_modules/
-dist/
-.env*
-*.log
+node_modules
+dist
